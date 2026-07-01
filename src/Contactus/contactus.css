@@ -158,8 +158,10 @@
 }
 
 .contact-image {
+  height: 510px;
   width: 100%;
   max-width: 460px;
+  aspect-ratio: 4 / 3; 
   border-radius: 24px;
   box-shadow: 0 20px 50px rgba(15, 35, 95, 0.16);
   object-fit: cover;
@@ -319,16 +321,27 @@
     padding: 24px 20px;
   }
 
-  .contact-floating-card {
-    padding: 10px 12px;
-    gap: 8px;
-    top: 12px;
-    left: 12px;
+  /* NEW: stop overlaying the cards on top of the image on mobile.
+     Instead, stack the image and both cards vertically so nothing
+     covers or crowds out the photo. */
+  .contact-image-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
   }
 
+  .contact-floating-card,
   .contact-floating-card-bottom {
-    bottom: 12px;
-    right: 12px;
+    position: static;
+    width: 100%;
+    max-width: 300px;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    padding: 10px 12px;
+    gap: 8px;
   }
 
   .contact-floating-icon {
