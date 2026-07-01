@@ -1,0 +1,203 @@
+/* ===== Horizontal Conditions Marquee — matches site's blue medical theme ===== */
+
+.horiz-section {
+  padding: 70px 0;
+  background: #f7faff;
+  overflow: hidden;
+}
+
+/* ---- Centered heading with gradient underline ---- */
+.horiz-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 44px;
+  padding: 0 6%;
+}
+
+#heading-horiz {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #0b1f3a;
+  margin: 0 0 14px 0;
+  letter-spacing: -0.02em;
+}
+
+.horiz-underline {
+  display: block;
+  width: 90px;
+  height: 5px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #60a5fa 0%, #2563eb 100%);
+}
+
+/* ---- Marquee viewport with fade edges ---- */
+.horiz-marquee {
+  position: relative;
+  width: 100%;
+ padding: 30px 0px; 
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0,
+    #000 6%,
+    #000 94%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0,
+    #000 6%,
+    #000 94%,
+    transparent 100%
+  );
+}
+
+/* ---- Scrolling track ---- */
+.horiz-track {
+  display: flex;
+  width: max-content;
+  gap: 20px;
+  animation: horiz-scroll 38s linear infinite;
+}
+
+.horiz-marquee:hover .horiz-track {
+  animation-play-state: paused;
+}
+
+@keyframes horiz-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ---- Chip ---- */
+.horiz-chip {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 22px;
+  background: #ffffff;
+  border: 1px solid #e3ecfb;
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(15, 35, 95, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease,
+    background 0.3s ease;
+  cursor: default;
+}
+
+.horiz-chip:hover {
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 14px 28px rgba(37, 99, 235, 0.2);
+  border-color: #93c5fd;
+  background: #f3f8ff;
+}
+
+.horiz-chip-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: #ffffff;
+  font-size: 0.9rem;
+  transition: transform 0.3s ease;
+}
+
+.horiz-chip:hover .horiz-chip-icon {
+  transform: rotate(-8deg) scale(1.08);
+}
+
+.horiz-chip p {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #0b1f3a;
+  white-space: nowrap;
+}
+/* ===========================================
+   Scroll Entrance
+=========================================== */
+
+@keyframes horizHeadingReveal {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes marqueeReveal {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+    filter: blur(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+/* Initial State */
+
+.horiz-header,
+.horiz-marquee {
+  opacity: 0;
+}
+
+/* Heading */
+
+.horiz-section.in-view .horiz-header {
+  animation: horizHeadingReveal .8s cubic-bezier(.22,1,.36,1) forwards;
+}
+
+/* Marquee */
+
+.horiz-section.in-view .horiz-marquee {
+  animation: marqueeReveal .9s cubic-bezier(.22,1,.36,1) .25s forwards;
+}
+
+/* Don't start scrolling until visible */
+
+.horiz-track {
+  animation-play-state: paused;
+}
+
+.horiz-section.in-view .horiz-track {
+  animation-play-state: running;
+}
+/* ---- Reduced motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  .horiz-track {
+    animation: none;
+  }
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 480px) {
+  #heading-horiz {
+    font-size: 1.9rem;
+  }
+
+  .horiz-chip {
+    padding: 11px 16px;
+    gap: 10px;
+  }
+
+  .horiz-chip p {
+    font-size: 0.85rem;
+  }
+}

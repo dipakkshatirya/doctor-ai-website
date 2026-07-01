@@ -1,0 +1,281 @@
+/* ===== Patient Reviews — slow horizontal marquee, Google reviews ===== */
+
+.reviews-section {
+  padding: 80px 0;
+  background: #f7faff;
+  overflow: hidden;
+}
+
+/* ---- Centered heading with gradient underline ---- */
+.reviews-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 44px;
+  padding: 0 6%;
+}
+
+#heading-reviews {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #0b1f3a;
+  margin: 0 0 14px 0;
+  letter-spacing: -0.02em;
+}
+
+.reviews-underline {
+  display: block;
+  width: 90px;
+  height: 5px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #60a5fa 0%, #2563eb 100%);
+  margin-bottom: 18px;
+}
+
+.reviews-subtext {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #5b6779;
+}
+
+.reviews-subtext-icon {
+  font-size: 0.95rem;
+  color: #4285f4;
+}
+
+/* ---- Marquee viewport with fade edges ---- */
+.reviews-marquee {
+  position: relative;
+  width: 100%;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0,
+    #000 6%,
+    #000 94%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0,
+    #000 6%,
+    #000 94%,
+    transparent 100%
+  );
+  padding-bottom: 30px;
+}
+
+/* ---- Scrolling track ---- */
+.reviews-track {
+  display: flex;
+  width: max-content;
+  gap: 24px;
+  animation: reviews-scroll 70s linear infinite;
+}
+
+.reviews-marquee:hover .reviews-track {
+  animation-play-state: paused;
+}
+
+@keyframes reviews-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ---- Card ---- */
+.review-card {
+  flex: 0 0 auto;
+  width: 340px;
+  background: #ffffff;
+  border: 1px solid #eef2f9;
+  border-radius: 18px;
+  padding: 24px 24px 22px;
+  box-shadow: 0 4px 16px rgba(15, 35, 95, 0.06);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.review-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 36px rgba(37, 99, 235, 0.16);
+  border-color: #bfdbfe;
+}
+
+/* ---- Top row: avatar, name, stars, google badge ---- */
+.review-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.review-avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid #eaf1ff;
+  transition: border-color 0.35s ease;
+}
+
+.review-card:hover .review-avatar {
+  border-color: #60a5fa;
+}
+
+.review-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  flex-grow: 1;
+}
+
+.review-name {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0b1f3a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.review-stars {
+  display: flex;
+  gap: 3px;
+  font-size: 0.75rem;
+}
+
+.star-filled {
+  color: #fbbf24;
+}
+
+.star-empty {
+  color: #e2e8f0;
+}
+
+.review-google-icon {
+  font-size: 1.1rem;
+  color: #4285f4;
+  flex-shrink: 0;
+}
+
+/* ---- Quote + text ---- */
+.review-quote-icon {
+  font-size: 1.3rem;
+  color: #dbeafe;
+  margin-bottom: 8px;
+  transition: color 0.35s ease;
+}
+
+.review-card:hover .review-quote-icon {
+  color: #93c5fd;
+}
+
+.review-text {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #5b6779;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.reviews-marquee{
+
+position:relative;
+overflow:hidden;
+
+}
+
+.reviews-marquee::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+left:-120%;
+
+width:40%;
+height:100%;
+
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.65),
+transparent
+);
+
+z-index:5;
+
+pointer-events:none;
+
+}
+@keyframes shimmer{
+
+from{
+left:-120%;
+}
+
+to{
+left:120%;
+}
+
+}
+.reviews-section.in-view .reviews-marquee::before{
+
+animation:shimmer 1.4s ease .25s forwards;
+
+}
+
+/* ---- Reduced motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  .reviews-track {
+    animation: none;
+  }
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .review-card {
+    width: 280px;
+    padding: 20px 20px 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .reviews-section {
+    padding: 56px 0;
+  }
+
+  #heading-reviews {
+    font-size: 1.9rem;
+  }
+
+  .reviews-subtext {
+    font-size: 0.85rem;
+    text-align: center;
+  }
+
+  .review-card {
+    width: 240px;
+    padding: 18px 16px;
+  }
+
+  .review-text {
+    font-size: 0.85rem;
+    -webkit-line-clamp: 6;
+  }
+}

@@ -1,0 +1,429 @@
+/* ====================================================
+   About Us Section
+==================================================== */
+.aboutus {
+  --navy: #0b1b3a;
+  --blue: #1e6fff;
+  --blue-light: #4f9bff;
+  --text-grey: #5b6478;
+
+  position: relative;
+  width: 100%;
+  background: #ffffff;
+  padding: 90px 0 80px;
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  overflow: hidden;
+}
+
+/* ====================================================
+   Container - two column layout, centered
+==================================================== */
+.aboutus-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ====================================================
+   Left content block
+==================================================== */
+.aboutus-content {
+  flex: 1 1 460px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 560px;
+}
+
+.aboutus-heading {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin: 0 0 18px;
+  position: relative;
+  padding-bottom: 18px;
+}
+
+.aboutus-heading::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 70px;
+  height: 4px;
+  border-radius: 4px;
+  background: var(--blue);
+}
+
+.aboutus-paragraph {
+  color: var(--text-grey);
+  font-size: 1.02rem;
+  line-height: 1.8;
+  margin: 0 0 18px;
+  text-align: left;
+}
+
+/* ====================================================
+   Right side image
+==================================================== */
+.aboutus-image {
+  flex: 1 1 380px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  justify-content: center;
+}
+
+.doctor-image {
+  /* width: 100%;
+  max-width: 420px; */
+  /* height: 480px; */
+  height: 480px;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+  position: relative;
+  z-index: 2;
+  top: 50px;
+}
+
+.image-shadow {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 30px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(30, 111, 255, 0.25),
+    transparent 70%
+  );
+  filter: blur(6px);
+  z-index: 1;
+}
+
+/* ====================================================
+   Stats bar - glassmorphism, centered
+==================================================== */
+.stats-section {
+  position: relative; /* or absolute if you want it to overlap */
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  max-width: 1150px;
+  margin: 0px auto 0;
+  padding: 24px 40px;
+
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 16px;
+  box-shadow: 0 20px 45px rgba(11, 27, 58, 0.15);
+
+  /* bottom: 80px; */
+}
+
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1 1 140px;
+  min-width: 120px;
+}
+
+.stat-icon {
+  color: #fff;
+  background: linear-gradient(135deg, var(--blue), var(--blue-light));
+  width: 52px;
+  height: 52px;
+  padding: 12px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-bottom: 14px;
+  box-shadow: 0 8px 18px rgba(30, 111, 255, 0.35);
+}
+
+.stat-number {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin: 0 0 4px;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.countup-value {
+  display: inline-block;
+}
+
+.stat-label {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--text-grey);
+  margin: 0;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 60px;
+  background: rgba(11, 27, 58, 0.15);
+  flex-shrink: 0;
+}
+
+/* ====================================================
+   Button - centered
+==================================================== */
+.aboutus-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.read-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 30px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(135deg, var(--blue), var(--blue-light));
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(30, 111, 255, 0.35);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.read-more-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(30, 111, 255, 0.45);
+}
+
+/* ====================================================
+   Section Divider (between Profile & About Us)
+==================================================== */
+.section-divider {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.section-divider .divider-line {
+  flex: 1;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(30, 90, 255, 0.3) 50%,
+    transparent 100%
+  );
+}
+
+.section-divider .divider-pulse {
+  flex-shrink: 0;
+  width: 90px;
+  height: 28px;
+}
+
+.section-divider .divider-pulse svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.section-divider .divider-pulse path {
+  fill: none;
+  stroke: #1e5aff;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.7;
+}
+/* ====================================================
+   Scroll-triggered entrance animations
+==================================================== */
+@keyframes aboutFadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes aboutFadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* Hidden until in-view is applied */
+.aboutus-heading,
+.aboutus-paragraph {
+  opacity: 0;
+}
+
+.aboutus-image .image-wrapper {
+  opacity: 0;
+}
+
+/* Text: heading first, then paragraphs stagger in */
+.aboutus-content.in-view .aboutus-heading {
+  animation: aboutFadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.aboutus-content.in-view .aboutus-paragraph:nth-of-type(1) {
+  animation: aboutFadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.18s forwards;
+}
+
+.aboutus-content.in-view .aboutus-paragraph:nth-of-type(2) {
+  animation: aboutFadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.34s forwards;
+}
+
+/* Image: slides in from the right, slightly after text starts */
+.aboutus-image.in-view .image-wrapper {
+  animation: aboutFadeInRight 0.9s cubic-bezier(0.4, 0, 0.2, 1) 0.2s forwards;
+}
+
+/* ====================================================
+   Responsive
+==================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .aboutus-heading,
+  .aboutus-paragraph,
+  .aboutus-image .image-wrapper {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (max-width: 992px) {
+  .section-divider {
+    padding: 0 40px;
+    gap: 16px;
+  }
+
+  .section-divider .divider-pulse {
+    width: 75px;
+    height: 24px;
+  }
+}
+
+@media (max-width: 900px) {
+  .aboutus {
+    padding: 60px 0;
+  }
+
+  .aboutus-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 0 24px;
+  }
+
+  .aboutus-content {
+    align-items: center;
+    max-width: 100%;
+  }
+
+  .aboutus-paragraph {
+    text-align: center;
+  }
+
+  .aboutus-heading::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .stats-section {
+    flex-direction: column;
+    padding: 24px;
+  }
+
+  .stat-divider {
+    width: 60%;
+    height: 1px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-divider {
+    padding: 0 24px;
+    gap: 14px;
+  }
+
+  .section-divider .divider-pulse {
+    width: 60px;
+    height: 20px;
+  }
+
+  .section-divider .divider-line {
+    height: 1px;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutus-heading {
+    font-size: 2rem;
+  }
+
+  .stat-number {
+    font-size: 1.4rem;
+  }
+
+  .doctor-image {
+    height: 360px;
+  }
+
+  .section-divider {
+    padding: 0 16px;
+    gap: 10px;
+  }
+
+  .section-divider .divider-pulse {
+    width: 50px;
+    height: 18px;
+  }
+}
