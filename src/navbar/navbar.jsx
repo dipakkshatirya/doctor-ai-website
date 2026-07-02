@@ -15,6 +15,7 @@ import {
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [treatmentOpen, setTreatmentOpen] = useState(false);
 
   return (
     <nav className="navbar">
@@ -38,6 +39,7 @@ const Navbar = () => {
           <NavLink to="/about">About Us</NavLink>
         </li>
 
+        {/* Desktop Treatments Dropdown */}
         <li className="dropdown">
           <span className="dropdown-title">
             Treatments <FontAwesomeIcon icon={faCaretDown} />
@@ -88,7 +90,14 @@ const Navbar = () => {
 
         <div
           className="mobile-menu"
-          onClick={() => setMenuOpen(!menuOpen)}
+          onClick={() => {
+            setMenuOpen(!menuOpen);
+
+            // Close treatments when menu closes
+            if (menuOpen) {
+              setTreatmentOpen(false);
+            }
+          }}
         >
           <FontAwesomeIcon icon={menuOpen ? faXmark : faBars} />
         </div>
@@ -96,47 +105,108 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       <div className={`mobile-nav ${menuOpen ? "active" : ""}`}>
-        <NavLink to="/" onClick={() => setMenuOpen(false)}>
+        <NavLink
+          to="/"
+          onClick={() => {
+            setMenuOpen(false);
+            setTreatmentOpen(false);
+          }}
+        >
           Home
         </NavLink>
 
-        <NavLink to="/about" onClick={() => setMenuOpen(false)}>
+        <NavLink
+          to="/about"
+          onClick={() => {
+            setMenuOpen(false);
+            setTreatmentOpen(false);
+          }}
+        >
           About Us
         </NavLink>
 
-        <NavLink
-          to="/treatments/diabetes-management"
-          onClick={() => setMenuOpen(false)}
-        >
-          Diabetes Management
-        </NavLink>
+        {/* Mobile Treatments Accordion */}
+        <div className="mobile-dropdown">
+          <button
+            className="mobile-dropdown-btn"
+            onClick={() => setTreatmentOpen(!treatmentOpen)}
+          >
+            <span>Treatments</span>
+
+            <FontAwesomeIcon
+              icon={faCaretDown}
+              className={treatmentOpen ? "rotate" : ""}
+            />
+          </button>
+
+          <div
+            className={`mobile-dropdown-content ${
+              treatmentOpen ? "active" : ""
+            }`}
+          >
+            <NavLink
+              to="/treatments/diabetes-management"
+              onClick={() => {
+                setMenuOpen(false);
+                setTreatmentOpen(false);
+              }}
+            >
+              <FontAwesomeIcon icon={faDroplet} />
+              Diabetes Management
+            </NavLink>
+
+            <NavLink
+              to="/treatments/blood-pressure-management"
+              onClick={() => {
+                setMenuOpen(false);
+                setTreatmentOpen(false);
+              }}
+            >
+              <FontAwesomeIcon icon={faHeartbeat} />
+              Blood Pressure Management
+            </NavLink>
+
+            <NavLink
+              to="/treatments/chest-pain-management"
+              onClick={() => {
+                setMenuOpen(false);
+                setTreatmentOpen(false);
+              }}
+            >
+              <FontAwesomeIcon icon={faLungs} />
+              Chest Pain Management
+            </NavLink>
+
+            <NavLink
+              to="/treatments/thyroid-disorders"
+              onClick={() => {
+                setMenuOpen(false);
+                setTreatmentOpen(false);
+              }}
+            >
+              <FontAwesomeIcon icon={faUserDoctor} />
+              Thyroid Disorders
+            </NavLink>
+          </div>
+        </div>
 
         <NavLink
-          to="/treatments/blood-pressure-management"
-          onClick={() => setMenuOpen(false)}
+          to="/blog"
+          onClick={() => {
+            setMenuOpen(false);
+            setTreatmentOpen(false);
+          }}
         >
-          Blood Pressure Management
-        </NavLink>
-
-        <NavLink
-          to="/treatments/chest-pain-management"
-          onClick={() => setMenuOpen(false)}
-        >
-          Chest Pain Management
-        </NavLink>
-
-        <NavLink
-          to="/treatments/thyroid-disorders"
-          onClick={() => setMenuOpen(false)}
-        >
-          Thyroid Disorders
-        </NavLink>
-
-        <NavLink to="/blog" onClick={() => setMenuOpen(false)}>
           Blog
         </NavLink>
 
-        <NavLink to="/contact" onClick={() => setMenuOpen(false)}>
+        <NavLink
+          to="/contact"
+          onClick={() => {
+            setMenuOpen(false);
+            setTreatmentOpen(false);
+          }}
+        >
           Contact Us
         </NavLink>
 
