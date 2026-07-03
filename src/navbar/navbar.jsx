@@ -7,10 +7,12 @@ import {
   faBars,
   faXmark,
   faCaretDown,
-  faHeartbeat,
-  faDroplet,
-  faLungs,
-  faUserDoctor,
+  faBone,
+  faPersonRunning,
+  faHand,
+  faShoePrints,
+  faNotesMedical,
+  faTruckMedical,
 } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
@@ -23,8 +25,8 @@ const Navbar = () => {
       <div className="logo">
         <NavLink to="/">
           <img
-            src="https://plain-apac-prod-public.komododecks.com/202606/28/9ohEpKZecARyHaZ6stcZ/image.png"
-            alt="Dr. Hinesh Acharya"
+            src="https://plain-apac-prod-public.komododecks.com/202607/02/IOS1g5zk4ewhR4OFMGDv/image.png"
+            alt="Dr. Aarav Sharma"
           />
         </NavLink>
       </div>
@@ -39,31 +41,41 @@ const Navbar = () => {
           <NavLink to="/about">About Us</NavLink>
         </li>
 
-        {/* Desktop Treatments Dropdown */}
+        {/* Desktop Specialties Dropdown */}
         <li className="dropdown">
           <span className="dropdown-title">
-            Treatments <FontAwesomeIcon icon={faCaretDown} />
+            Specialties <FontAwesomeIcon icon={faCaretDown} />
           </span>
 
           <div className="dropdown-menu">
-            <NavLink to="/treatments/diabetes-management">
-              <FontAwesomeIcon icon={faDroplet} />
-              Diabetes Management
+            <NavLink to="/blog/joint-replacement">
+              <FontAwesomeIcon icon={faBone} />
+              Joint Replacement
             </NavLink>
 
-            <NavLink to="/treatments/blood-pressure-management">
-              <FontAwesomeIcon icon={faHeartbeat} />
-              Blood Pressure Management
+            <NavLink to="/blog/sports-medicine">
+              <FontAwesomeIcon icon={faPersonRunning} />
+              Sports Medicine
             </NavLink>
 
-            <NavLink to="/treatments/chest-pain-management">
-              <FontAwesomeIcon icon={faLungs} />
-              Chest Pain Management
+            <NavLink to="/blog/hand-wrist">
+              <FontAwesomeIcon icon={faHand} />
+              Hand & Wrist
             </NavLink>
 
-            <NavLink to="/treatments/thyroid-disorders">
-              <FontAwesomeIcon icon={faUserDoctor} />
-              Thyroid Disorders
+            <NavLink to="/blog/foot-ankle">
+              <FontAwesomeIcon icon={faShoePrints} />
+              Foot & Ankle
+            </NavLink>
+
+            <NavLink to="/blog/spine">
+              <FontAwesomeIcon icon={faNotesMedical} />
+              Spine
+            </NavLink>
+
+            <NavLink to="/blog/trauma-fractures">
+              <FontAwesomeIcon icon={faTruckMedical} />
+              Trauma & Fractures
             </NavLink>
           </div>
         </li>
@@ -80,7 +92,7 @@ const Navbar = () => {
       {/* Right Side */}
       <div className="nav-right">
         <a
-          href="https://wa.me/919879495597?text=Hello%20Dr.%20Hinesh%20Acharya,%20I%20would%20like%20to%20book%20an%20appointment.%20Please%20let%20me%20know%20the%20available%20time%20slots.%20Thank%20you."
+          href="https://wa.me/919265139142?text=Hello%20Dr.%20Aarav%20Sharma,%20I%20would%20like%20to%20book%20an%20appointment.%20Please%20let%20me%20know%20the%20available%20time%20slots.%20Thank%20you."
           target="_blank"
           rel="noopener noreferrer"
           className="appointment-btn"
@@ -93,7 +105,6 @@ const Navbar = () => {
           onClick={() => {
             setMenuOpen(!menuOpen);
 
-            // Close treatments when menu closes
             if (menuOpen) {
               setTreatmentOpen(false);
             }
@@ -125,13 +136,13 @@ const Navbar = () => {
           About Us
         </NavLink>
 
-        {/* Mobile Treatments Accordion */}
+        {/* Mobile Specialties */}
         <div className="mobile-dropdown">
           <button
             className="mobile-dropdown-btn"
             onClick={() => setTreatmentOpen(!treatmentOpen)}
           >
-            <span>Treatments</span>
+            <span>Specialties</span>
 
             <FontAwesomeIcon
               icon={faCaretDown}
@@ -145,47 +156,69 @@ const Navbar = () => {
             }`}
           >
             <NavLink
-              to="/treatments/diabetes-management"
+              to="/blog/joint-replacement"
               onClick={() => {
                 setMenuOpen(false);
                 setTreatmentOpen(false);
               }}
             >
-              <FontAwesomeIcon icon={faDroplet} />
-              Diabetes Management
+              <FontAwesomeIcon icon={faBone} />
+              Joint Replacement
             </NavLink>
 
             <NavLink
-              to="/treatments/blood-pressure-management"
+              to="/blog/sports-medicine"
               onClick={() => {
                 setMenuOpen(false);
                 setTreatmentOpen(false);
               }}
             >
-              <FontAwesomeIcon icon={faHeartbeat} />
-              Blood Pressure Management
+              <FontAwesomeIcon icon={faPersonRunning} />
+              Sports Medicine
             </NavLink>
 
             <NavLink
-              to="/treatments/chest-pain-management"
+              to="/blog/hand-wrist"
               onClick={() => {
                 setMenuOpen(false);
                 setTreatmentOpen(false);
               }}
             >
-              <FontAwesomeIcon icon={faLungs} />
-              Chest Pain Management
+              <FontAwesomeIcon icon={faHand} />
+              Hand & Wrist
             </NavLink>
 
             <NavLink
-              to="/treatments/thyroid-disorders"
+              to="/blog/foot-ankle"
               onClick={() => {
                 setMenuOpen(false);
                 setTreatmentOpen(false);
               }}
             >
-              <FontAwesomeIcon icon={faUserDoctor} />
-              Thyroid Disorders
+              <FontAwesomeIcon icon={faShoePrints} />
+              Foot & Ankle
+            </NavLink>
+
+            <NavLink
+              to="/blog/spine"
+              onClick={() => {
+                setMenuOpen(false);
+                setTreatmentOpen(false);
+              }}
+            >
+              <FontAwesomeIcon icon={faNotesMedical} />
+              Spine
+            </NavLink>
+
+            <NavLink
+              to="/blog/trauma-fractures"
+              onClick={() => {
+                setMenuOpen(false);
+                setTreatmentOpen(false);
+              }}
+            >
+              <FontAwesomeIcon icon={faTruckMedical} />
+              Trauma & Fractures
             </NavLink>
           </div>
         </div>
@@ -211,7 +244,7 @@ const Navbar = () => {
         </NavLink>
 
         <a
-          href="https://wa.me/919879495597?text=Hello%20Dr.%20Hinesh%20Acharya,%20I%20would%20like%20to%20book%20an%20appointment.%20Please%20let%20me%20know%20the%20available%20time%20slots.%20Thank%20you."
+          href="https://wa.me/919265139142?text=Hello%20Dr.%20Aarav%20Sharma,%20I%20would%20like%20to%20book%20an%20appointment.%20Please%20let%20me%20know%20the%20available%20time%20slots.%20Thank%20you."
           target="_blank"
           rel="noopener noreferrer"
           className="mobile-btn"

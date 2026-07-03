@@ -3,9 +3,9 @@ import "./profile.css";
 
 const images = [
   // "https://plain-apac-prod-public.komododecks.com/202606/29/OruCmUDJ9ol0Mw91z7WS/image.png",
-  "https://plain-apac-prod-public.komododecks.com/202606/30/kd9zYm7SHhjA0uLG9z5B/image.webp",
-  "https://plain-apac-prod-public.komododecks.com/202606/30/ZX3X2HvyaSlZCQ3EcFxM/image.webp",
-  "https://plain-apac-prod-public.komododecks.com/202606/30/dJHl3IsAUxnyHejJ4RXn/image.webp",
+  "https://plain-apac-prod-public.komododecks.com/202607/02/S74rg8VIc4Fr1Qjgu6Ko/image.png",
+  "https://plain-apac-prod-public.komododecks.com/202607/02/oLSqPxQgOKRt8XQgdQJw/image.png",
+  "https://plain-apac-prod-public.komododecks.com/202607/02/eccWH0ITgXXjO9Z7wc3K/image.png",
 ];
 
 const borderRadii = [
@@ -35,8 +35,8 @@ const Profile = () => {
         <div className="doctor-img-wrapper">
           <img
             className="doctor-main-img"
-            src="https://plain-apac-prod-public.komododecks.com/202606/29/D8KzldaoUj7ko8czzVVh/image.png"
-            alt="Dr. Hinesh Acharya"
+            src="https://plain-apac-prod-public.komododecks.com/202607/02/2lulIAM1YcctQUFrQTz2/image.png"
+            alt="Dr. Aarav Sharma"
           />
         </div>
 
@@ -60,7 +60,7 @@ const Profile = () => {
             </svg>
           </div>
           <div className="exp-badge-text">
-            <span className="exp-number">10+</span>
+            <span className="exp-number">20+</span>
             <span className="exp-label">Years Exp.</span>
           </div>
         </div>
@@ -88,11 +88,11 @@ const Profile = () => {
       <div className="right-side">
         <span className="eyebrow">Trusted Medical Care</span>
         <h3 className="dr-prefix">DR.</h3>
-        <h1 className="dr-name">Hinesh Acharya</h1>
+        <h1 className="dr-name">Dr. Aarav Sharma</h1>
 
         <p className="dr-desc">
-          Consultant Physician for Diabetes, Blood Pressure, Cardiac, Lung,
-          Liver, Thyroid, Kidney, Brain Diseases and Fever of any type.
+          Expert orthopedic care for joint replacement, sports injuries, hand,
+          foot, spine, and fracture treatments.
         </p>
 
         <button

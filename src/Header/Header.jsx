@@ -15,9 +15,8 @@ const Header = () => {
         <p>
           <span className="full-text">
             <strong>Call Us:</strong>{" "}
-            <a href="tel:+919879495597">+91 98794 95597</a>
-            {" | "}
-            <a href="tel:+916352114024">+91 63521 14024</a>
+            <a href="tel:+919879495597">+91 92651 39142</a>
+            
           </span>
           <a href="tel:+919879495597" className="short-text">Call</a>
         </p>
@@ -33,9 +32,9 @@ const Header = () => {
         <p>
           <span className="full-text">
             <strong>Email:</strong>{" "}
-            <a href="mailto:hracharya88@gmail.com?subject=Appointment%20Request">hracharya88@gmail.com</a>
+            <a href="mailto:i.dipakkshatriya@gmail.com?subject=Appointment%20Request">DrAaravSharma@business.com</a>
           </span>
-          <a href="mailto:hracharya88@gmail.com?subject=Appointment%20Request" className="short-text">Email</a>
+          <a href="mailto:i.dipakkshatriya@gmail.com?subject=Appointment%20Request" className="short-text">Email</a>
         </p>
       </div>
 
@@ -49,9 +48,9 @@ const Header = () => {
         <p>
           <span className="full-text">
             <strong>Clinic:</strong>{" "}
-            <a href="https://maps.app.goo.gl/1fCYeh32UbfLgmz89" target="_blank" rel="noopener noreferrer">Rajmani Society, Shyamal, Ahmedabad</a>
+            <a href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer">Satellite Road, Near Shivranjani, Ahmedabad</a>
           </span>
-          <a href="https://maps.app.goo.gl/1fCYeh32UbfLgmz89" target="_blank" rel="noopener noreferrer" className="short-text">Clinic</a>
+          <a href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer" className="short-text">Clinic</a>
         </p>
       </div>
     </header>

@@ -1,13 +1,12 @@
-import React from 'react'
+import React from "react";
 import "./pages.css";
-
-const contactuspage = () => {
+const Sportsmedicine = () => {
   return (
     <div>
       <div>
         <section className="coming-soon-page">
           <div className="coming-soon-container">
-            <h1>Contact Us</h1>
+            <h1>Sports Medicine</h1>
             <img
               src="https://plain-apac-prod-public.komododecks.com/202607/01/7y907SnhrQdy6XyQcP2q/image.jpg"
               alt="Work in Progress"
@@ -27,7 +26,7 @@ const contactuspage = () => {
         </section>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default contactuspage
+export default Sportsmedicine;

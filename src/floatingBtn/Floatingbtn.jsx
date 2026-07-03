@@ -10,7 +10,7 @@ const Floatingbtn = () => {
     <>
       {/* Phone */}
       <a
-        href="tel:+919879495597"
+        href="tel:+919265139142"
         className="floating-btn phone-btn"
         aria-label="Call Now"
       >
@@ -22,7 +22,7 @@ const Floatingbtn = () => {
 
       {/* WhatsApp */}
       <a
-        href="https://wa.me/919879495597"
+        href="https://wa.me/919265139142"
         target="_blank"
         rel="noreferrer"
         className="floating-btn whatsapp-btn"

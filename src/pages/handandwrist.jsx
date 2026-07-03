@@ -1,13 +1,12 @@
 import React from 'react'
 import "./pages.css";
-
-const contactuspage = () => {
+const handandwrist = () => {
   return (
-    <div>
+     <div>
       <div>
         <section className="coming-soon-page">
           <div className="coming-soon-container">
-            <h1>Contact Us</h1>
+            <h1>Hand & Wrist</h1>
             <img
               src="https://plain-apac-prod-public.komododecks.com/202607/01/7y907SnhrQdy6XyQcP2q/image.jpg"
               alt="Work in Progress"
@@ -30,4 +29,4 @@ const contactuspage = () => {
   )
 }
 
-export default contactuspage
+export default handandwrist

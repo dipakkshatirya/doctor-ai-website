@@ -102,17 +102,18 @@ const Aboutus = () => {
           <h2 className="aboutus-heading">About Us</h2>
 
           <p className="aboutus-paragraph">
-            Consultant Physician for Diabetes, Blood Pressure, Cardiac, Lung,
-            Liver, Thyroid, Kidney, Brain Diseases, and Fever of any type. Dr.
-            Hinesh Acharya started his medical career in 2005. He has worked as
-            an ICU In-charge and Consultant Physician at Apollo, SAL, Sterling,
-            Lifeline, Bodyline, Indus, Parekhs and Medilink Hospitals.
+            Dr. Aarav Sharma is a dedicated orthopedic surgeon specializing in
+            joint replacement, sports medicine, spine care, hand and wrist
+            surgery, foot and ankle disorders, and trauma management. He is
+            committed to delivering advanced, personalized treatment that helps
+            patients recover mobility, relieve pain, and return to an active
+            lifestyle.
           </p>
 
           <p className="aboutus-paragraph">
-            Over his 10-year career span, Dr. Hinesh Acharya has treated more
-            than 30,000 patients across Ahmedabad, including Apollo, Medilink,
-            Indus, SAL, Sterling, HCG, Parekhs and Bodyline Hospitals.
+            Having treated over 45,000 patients, Dr. Aarav Sharma is known for
+            his medical excellence and reliability. His 4.8-star Google rating
+            reflects his commitment to quality care and patient well-being.
           </p>
         </div>
 
@@ -120,8 +121,8 @@ const Aboutus = () => {
         <div className={`aboutus-image ${contentInView ? "in-view" : ""}`}>
           <div className="image-wrapper">
             <img
-              src="https://plain-apac-prod-public.komododecks.com/202607/01/UQ9iAVB26ZDKVGnGrvlT/image.png"
-              alt="Dr. Hinesh Acharya"
+              src="https://plain-apac-prod-public.komododecks.com/202607/02/hbisVDxNe5nhqtjP1Ee8/image.png"
+              alt="Dr"
               className="doctor-image"
             />
 
@@ -136,7 +137,7 @@ const Aboutus = () => {
           <FontAwesomeIcon icon={faUserGroup} className="stat-icon" />
 
           <h3 className="stat-number">
-            <CountUp end={30000} start={inView} suffix="+" />
+            <CountUp end={45000} start={inView} suffix="+" />
           </h3>
 
           <p className="stat-label">Patients</p>
@@ -148,7 +149,7 @@ const Aboutus = () => {
           <FontAwesomeIcon icon={faAward} className="stat-icon" />
 
           <h3 className="stat-number">
-            <CountUp end={10} start={inView} suffix=" Years" />
+            <CountUp end={20} start={inView} suffix=" Years" />
           </h3>
 
           <p className="stat-label">of Experience</p>
@@ -160,7 +161,7 @@ const Aboutus = () => {
           <FontAwesomeIcon icon={faStar} className="stat-icon" />
 
           <h3 className="stat-number">
-            <CountUp end={4.9} decimals={1} start={inView} suffix=" Star" />
+            <CountUp end={4.8} decimals={1} start={inView} suffix=" Star" />
           </h3>
 
           <p className="stat-label">On Google</p>

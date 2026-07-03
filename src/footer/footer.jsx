@@ -15,20 +15,28 @@ import "./footer.css";
 
 const treatments = [
   {
-    label: "Diabetes Management",
-    route: "/treatments/diabetes-management",
+    label: "Joint Replacement",
+    route: "/blog/joint-replacement",
   },
   {
-    label: "Blood Pressure Management",
-    route: "/treatments/blood-pressure-management",
+    label: "Sports Medicine",
+    route: "/blog/sports-medicine",
   },
   {
-    label: "Chest Pain Management",
-    route: "/treatments/chest-pain-management",
+    label: "Hand & Wrist",
+    route: "/blog/hand-wrist",
   },
   {
-    label: "Thyroid Disorders",
-    route: "/treatments/thyroid-disorders",
+    label: "Foot & Ankle",
+    route: "/blog/foot-ankle",
+  },
+  {
+    label: "Spine Care",
+    route: "/blog/spine",
+  },
+  {
+    label: "Trauma & Fractures",
+    route: "/blog/trauma-fractures",
   },
 ];
 
@@ -47,7 +55,7 @@ const Footer = () => {
       },
       {
         threshold: 0.15,
-      }
+      },
     );
 
     if (footerRef.current) {
@@ -58,27 +66,21 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer
-      ref={footerRef}
-      className={`footer ${inView ? "in-view" : ""}`}
-    >
+    <footer ref={footerRef} className={`footer ${inView ? "in-view" : ""}`}>
       <div className="footer-top">
         <div className="footer-grid">
-
           {/* About */}
           <div className="footer-col">
-            <h3 className="footer-heading">Dr. Hinesh Acharya</h3>
+            <h3 className="footer-heading">Dr. Aarav Sharma</h3>
 
             <p className="footer-about">
-              Consultant Physician for Diabetes, Blood Pressure, Cardiac,
-              Lung, Liver, Thyroid, Kidney, Brain Diseases and Fever of any
-              type.
+              Expert orthopedic care for joint replacement, sports injuries,
+              hand, foot, spine, and fracture treatments.
             </p>
 
             <div className="footer-socials">
-
               <a
-                href="https://www.facebook.com/dr.hineshacharya"
+                href="https://www.facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
@@ -88,7 +90,7 @@ const Footer = () => {
               </a>
 
               <a
-                href="https://www.instagram.com/dr.hineshacharya/"
+                href="https://www.instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -98,7 +100,7 @@ const Footer = () => {
               </a>
 
               <a
-                href="https://wa.me/919879495597"
+                href="https://wa.me/919265139142"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="WhatsApp"
@@ -106,13 +108,12 @@ const Footer = () => {
               >
                 <FontAwesomeIcon icon={faWhatsapp} />
               </a>
-
             </div>
           </div>
 
           {/* Treatments */}
           <div className="footer-col">
-            <h3 className="footer-heading">Treatment</h3>
+            <h3 className="footer-heading">Specialties</h3>
 
             <ul className="footer-links">
               {treatments.map((item) => (
@@ -128,7 +129,6 @@ const Footer = () => {
             <h3 className="footer-heading">Address</h3>
 
             <ul className="footer-contact">
-
               <li>
                 <FontAwesomeIcon
                   icon={faLocationDot}
@@ -136,9 +136,9 @@ const Footer = () => {
                 />
 
                 <span>
-                  106, 1st Floor, Sun Gravitas,
+                  302, Shree Avenue Complex,
                   <br />
-                  Rajmani Society, Shyamal,
+                  Satellite Road, Near Shivranjani Crossroads,
                   <br />
                   Ahmedabad, Gujarat 380015
                 </span>
@@ -151,15 +151,11 @@ const Footer = () => {
                 />
 
                 <span>
-                  <a href="tel:+919879495597">
-                    +91 98794 95597
-                  </a>
+                  <a href="tel:+919879495597">+91 92651 39142</a>
 
-                  <br />
+                  {/* <br /> */}
 
-                  <a href="tel:+916352114024">
-                    +91 63521 14024
-                  </a>
+                  {/* <a href="tel:+916352114024">+91 92651 39142</a> */}
                 </span>
               </li>
 
@@ -171,21 +167,17 @@ const Footer = () => {
 
                 <span>
                   <a href="mailto:hracharya88@gmail.com">
-                    hracharya88@gmail.com
+                    DrAaravSharma@business.com
                   </a>
                 </span>
               </li>
-
             </ul>
           </div>
-
         </div>
       </div>
 
       <div className="footer-bottom">
-        <p>
-          &copy; {year} Dr. Hinesh Acharya. All rights reserved.
-        </p>
+        <p>&copy; {year} Dr. Aarav Sharma. All rights reserved.</p>
       </div>
     </footer>
   );

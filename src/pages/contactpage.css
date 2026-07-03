@@ -1,0 +1,411 @@
+/* ==========================================================
+   Contact Us page — v2 layout.
+   Asymmetric hero (copy + quick-contact list on the left,
+   illustration in a soft blob frame on the right) followed
+   by a standalone form card.
+   ========================================================== */
+
+.contact-page {
+  --navy: #101c3f;
+  --blue: #1d6ff2;
+  --blue-light: #4fa8ff;
+  --blue-tint: #eef4ff;
+  --blob-bg: #dce8fb;
+  --border: #e5eaf5;
+  --gray: #5b6478;
+  --red: #e0294a;
+  --green: #1aa564;
+
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 64px 24px 96px;
+  color: var(--navy);
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+/* ---------- Hero ---------- */
+.contact-hero {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 48px;
+  align-items: center;
+  margin-bottom: 72px;
+}
+
+.contact-eyebrow {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 14px;
+}
+
+.contact-hero-text h1 {
+  font-size: 46px;
+  line-height: 1.12;
+  font-weight: 800;
+  color: var(--navy);
+  margin: 0 0 18px;
+}
+
+.contact-hero-text h1 span {
+  background: linear-gradient(90deg, var(--blue) 0%, var(--blue-light) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.contact-tagline {
+  font-size: 16.5px;
+  line-height: 1.65;
+  color: var(--gray);
+  max-width: 460px;
+  margin: 0 0 32px;
+}
+
+/* Quick contact list */
+.contact-quick-list {
+  list-style: none;
+  margin: 0 0 28px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-quick-list li a,
+.contact-quick-item-static {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  text-decoration: none;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.contact-quick-list li a:hover {
+  border-color: var(--blue);
+  background: var(--blue-tint);
+  transform: translateX(4px);
+}
+
+.contact-quick-icon {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--blue) 0%, var(--blue-light) 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.contact-quick-list div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.contact-quick-list span {
+  font-size: 11.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--gray);
+}
+
+.contact-quick-list strong {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+/* Socials */
+.contact-socials {
+  display: flex;
+  gap: 12px;
+}
+
+.contact-social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--blue-tint);
+  color: var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.contact-social-icon:hover {
+  background: linear-gradient(135deg, var(--blue) 0%, var(--blue-light) 100%);
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+/* ---------- Illustration ---------- */
+.contact-hero-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-hero-blob {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  aspect-ratio: 1 / 1;
+  border-radius: 45% 55% 58% 42% / 48% 45% 55% 52%;
+  background: var(--blob-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 36px;
+  overflow: hidden;
+}
+
+.contact-hero-blob img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ---------- Form card ---------- */
+.contact-form-card {
+  max-width: 720px;
+  margin: 0 auto;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 44px 44px 40px;
+  box-shadow: 0 28px 56px -30px rgba(16, 28, 63, 0.22);
+}
+
+.contact-form-head {
+  margin-bottom: 28px;
+}
+
+.contact-form-head h2 {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--navy);
+  margin: 0 0 6px;
+}
+
+.contact-form-head p {
+  font-size: 14.5px;
+  color: var(--gray);
+  margin: 0;
+}
+
+.contact-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.contact-field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.contact-field label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.contact-field label svg {
+  font-size: 12px;
+  color: var(--blue);
+}
+
+.contact-field input,
+.contact-field textarea {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 13px 16px;
+  font-size: 14.5px;
+  font-family: inherit;
+  color: var(--navy);
+  background: #fafcff;
+  resize: vertical;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-field input::placeholder,
+.contact-field textarea::placeholder {
+  color: #a3aac2;
+}
+
+.contact-field input:focus,
+.contact-field textarea:focus {
+  outline: none;
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(29, 111, 242, 0.15);
+}
+
+.contact-field input.has-error,
+.contact-field textarea.has-error {
+  border-color: var(--red);
+}
+
+.contact-error {
+  font-size: 12.5px;
+  color: var(--red);
+  font-weight: 500;
+}
+
+.contact-submit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(90deg, var(--blue) 0%, var(--blue-light) 100%);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 15px 28px;
+  border-radius: 999px;
+  margin-top: 8px;
+  box-shadow: 0 16px 32px -10px rgba(29, 111, 242, 0.55);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.contact-submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px -10px rgba(29, 111, 242, 0.65);
+}
+
+.contact-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Success state */
+.contact-success {
+  text-align: center;
+  padding: 24px 12px;
+}
+
+.contact-success-icon {
+  font-size: 44px;
+  color: var(--green);
+  margin-bottom: 16px;
+}
+
+.contact-success h3 {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--navy);
+  margin: 0 0 10px;
+}
+
+.contact-success p {
+  font-size: 14.5px;
+  color: var(--gray);
+  margin: 0 0 24px;
+}
+
+.contact-success .contact-submit-btn {
+  width: auto;
+  padding: 13px 28px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 960px) {
+  .contact-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-hero-visual {
+    order: -1;
+  }
+
+  .contact-hero-blob {
+    max-width: 320px;
+  }
+
+  .contact-field-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .contact-page {
+    padding: 40px 18px 64px;
+  }
+
+  .contact-hero-text h1 {
+    font-size: 32px;
+  }
+
+  .contact-form-card {
+    padding: 30px 24px;
+  }
+}
+
+/* ==========================================================
+   Animations (shared pattern with about-us.css / blog.css)
+   ========================================================== */
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.load-in {
+  opacity: 0;
+  animation: fadeSlideUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.load-in-1 { animation-delay: 0.05s; }
+.load-in-2 { animation-delay: 0.2s; }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .load-in,
+  .reveal {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

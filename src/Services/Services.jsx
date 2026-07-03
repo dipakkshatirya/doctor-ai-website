@@ -3,53 +3,75 @@ import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowRight,
-  faDroplet,
-  faHeartPulse,
-  faHeartCircleExclamation,
-  faBrain,
+  faBone,
+  faPersonRunning,
+  faHand,
+  faShoePrints,
+  faNotesMedical,
+  faTruckMedical,
 } from "@fortawesome/free-solid-svg-icons";
 import "./services.css";
 
 const servicesData = [
   {
-    id: "diabetes",
-    route: "/treatments/diabetes-management",
-    icon: faDroplet,
+    id: "joint-replacement",
+    route: "/blog/joint-replacement",
+    icon: faBone,
     image:
-      "https://cdn.scope.digital/Images/Articles/diyabet-nedir-seker-hastaligi-belirtileri-nelerdir-6792354.jpg?tr=w-630,h-420",
-    title: "Diabetes Management",
+      "https://totalspineortho.com/wp-content/uploads/2025/06/joint-replacement-1.webp",
+    title: "Joint Replacement",
     description:
-      "We have in-clinic Glucometer to measure blood sugar and laboratory to check FAS, PPBS, Hb A,C. We have Diet advise by doctor and weight management plans.",
+      "Advanced surgical treatment for damaged hip, knee and shoulder joints using modern joint replacement techniques to relieve pain, restore mobility and improve quality of life.",
   },
   {
-    id: "blood-pressure",
-    route: "/treatments/blood-pressure-management",
-    icon: faHeartPulse,
+    id: "sports-medicine",
+    route: "/blog/sports-medicine",
+    icon: faPersonRunning,
     image:
-      "https://ebv2e3r5onu.exactdn.com/wp-content/uploads/2021/12/Blood-Pressure-Numbers_Newsroom-1024x576.jpg?strip=all",
-    title: "Blood Pressure Management",
+      "https://moveandshine.in/wp-content/uploads/2024/10/sports-injury-rehab.png",
+    title: "Sports Medicine",
     description:
-      "We treat blood pressure patients at our clinic with the best knowledge and experience of Dr. Hinesh Acharya. We have in-clinic blood pressure measuring.",
+      "Specialized care for sports injuries including ligament tears, ACL injuries, meniscus damage, tendon problems and muscle strains with personalized rehabilitation plans.",
   },
   {
-    id: "chest-pain",
-    route: "/treatments/chest-pain-management",
-    icon: faHeartCircleExclamation,
+    id: "hand-wrist",
+    route: "/blog/hand-wrist",
+    icon: faHand,
     image:
-      "https://parashospitals-web.s3.ap-south-1.amazonaws.com/blogs/August2024/1724911181Chest%20pain.jpg",
-    title: "Chest Pain Management",
+      "https://www.dryogish.com/wp-content/uploads/2025/07/hand-wrist3.jpg",
+    title: "Hand & Wrist",
     description:
-      "We have ECG facility at the clinic for diagnosis of cardiac problems and immediate evaluation of chest pain related concerns.",
+      "Comprehensive treatment for hand and wrist fractures, carpal tunnel syndrome, tendon injuries, arthritis and other conditions affecting hand function and movement.",
   },
   {
-    id: "thyroid",
-    route: "/treatments/thyroid-disorders",
-    icon: faBrain,
+    id: "foot-ankle",
+    route: "/blog/foot-ankle",
+    icon: faShoePrints,
     image:
-      "https://www.thehealthsite.com/wp-content/uploads/2022/02/thyroid.jpeg",
-    title: "Thyroid Disorders",
+      "https://southernbone.com/wp-content/uploads/2025/01/foot.webp",
+    title: "Foot & Ankle",
     description:
-      "We treat thyroid patients at our clinic with the best treatment plans, regular monitoring and personalised care for lasting results.",
+      "Expert diagnosis and treatment for ankle sprains, heel pain, foot fractures, bunions, tendon disorders and other conditions affecting comfortable walking and mobility.",
+  },
+  {
+    id: "spine",
+    route: "/blog/spine",
+    icon: faNotesMedical,
+    image:
+      "https://zenspine.in/wp-content/uploads/2023/06/Degenerative-Conditions.jpg",
+    title: "Spine Care",
+    description:
+      "Comprehensive spine care for back pain, slipped discs, sciatica, spinal deformities and degenerative spine disorders using advanced surgical and non-surgical treatments.",
+  },
+  {
+    id: "trauma-fractures",
+    route: "/blog/trauma-fractures",
+    icon: faTruckMedical,
+    image:
+      "https://www.drdivyanshugoyal.com/wp-content/uploads/2019/10/Bone-Fracture.jpg",
+    title: "Trauma & Fractures",
+    description:
+      "Emergency orthopedic care for fractures, accident injuries, complex bone trauma and dislocations with timely treatment to ensure proper healing and recovery.",
   },
 ];
 
@@ -82,7 +104,7 @@ const Services = () => {
   return (
     <section className="services-section" ref={servicesRef}>
       <div className={`services-header ${inView ? "in-view" : ""}`}>
-        <h2 id="heading-servc">Our Services</h2>
+        <h2 id="heading-servc">Our Orthopedic Specialties</h2>
         <span className="services-underline"></span>
       </div>
 

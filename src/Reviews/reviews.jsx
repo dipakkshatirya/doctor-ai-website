@@ -5,61 +5,56 @@ import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 import "./reviews.css";
 
 const reviewsData = [
+  
   {
-    name: "Nipun Patel",
-    rating: 4,
-    image:
-      "https://plain-apac-prod-public.komododecks.com/202606/30/Oxrk2ZiepdZ4tuFzBnXq/image.png",
-    review: "Good prescription given. Very informative and friendly doctor.",
-  },
-  {
-    name: "Arti Rajak",
+    name: "Jatin Mehta",
     rating: 5,
     image:
-      "https://plain-apac-prod-public.komododecks.com/202606/30/aPE0AC5EuqWoHGG3Zz9T/image.png",
+      "https://i.pinimg.com/736x/c2/5e/e9/c25ee9027c1173705b2fd2034639705e.jpg",
     review:
-      "Amazing Experience. Dr. Hinesh Acharya effectively managed my high blood pressure. Understanding my health history, he developed a thorough plan to improve my overall health. Thanks to his treatment, my blood pressure has improved significantly, and I am completely satisfied with the care. I strongly recommend Dr. Hinesh.",
+      "I underwent knee replacement surgery under Dr. Aarav Sharma. The entire process—from consultation to recovery—was handled professionally. My knee pain has completely gone, and I can walk comfortably again. Highly recommended.",
   },
   {
-    name: "Kishan Rajput",
+    name: "Neha Patel",
     rating: 5,
     image:
-      "https://plain-apac-prod-public.komododecks.com/202606/30/HEdzkxmyjYd714AmkCnX/image.png",
+      "https://i.pinimg.com/564x/19/19/c3/1919c3e6a2ffb8ce138d359fbe083f7b.jpg",
     review:
-      "Dr. is a very kind and humble human being. His approach towards patients is unmatchable.",
+      "After suffering from a severe ankle ligament injury, I received excellent treatment and rehabilitation guidance. The recovery was much faster than I expected, and I'm back to my normal routine without pain.",
   },
   {
-    name: "SHAHEZAD KAZI",
+    name: "Rahul Verma",
     rating: 5,
     image:
-      "https://lh3.googleusercontent.com/a-/ALV-UjU0VeXug29sD0WXRLv3bmo63ptxes9W3LHCufpXygaaiTiBrm1v=w108-h108-p-rp-mo-br100",
+      "https://i.pinimg.com/236x/4f/5a/18/4f5a1819b3c8b831be64bab259639397.jpg",
     review:
-      "Dr. Hinesh Acharya is an outstanding physician with exceptional knowledge and experience in internal medicine. He listens patiently, explains the condition clearly and provides the most effective treatment. His diagnosis is accurate and treatment results are excellent. Truly a caring and trustworthy doctor. Highly recommended!",
+      "I had a wrist fracture after a bike accident. Dr. Aarav Sharma explained every step of the treatment and ensured a smooth recovery. My hand movement is now completely normal.",
   },
   {
-    name: "Vijay Kumar Yadav",
+    name: "Pooja Sharma",
     rating: 5,
     image:
-      "https://lh3.googleusercontent.com/a-/ALV-UjUZgVsZT7gB0Hei16Afp5zOEzmxBGB19f2k9Izn_wU6Fge7tdip=w108-h108-p-rp-mo-br100",
+      "https://images.unsplash.com/photo-1706943262117-b35de4ba50b4?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8aW5kaWFuJTIwZ2lybHxlbnwwfHwwfHx8MA%3D%3D",
     review:
-      "An excellent family physician—very patient, knowledgeable and caring. He listens carefully and explains everything clearly. We always feel confident and comfortable under his care. Highly recommended for families.",
+      "For months I struggled with severe back pain due to a spine problem. Dr. Aarav Sharma recommended the right treatment without unnecessary surgery. Today I can work and travel comfortably again.",
   },
   {
-    name: "Ashka Shah",
+    name: "Aisha Khan",
     rating: 5,
     image:
-      "https://lh3.googleusercontent.com/a-/ALV-UjU_yRx1W8rEG7EPDFaBeaJIPFTJw3fB0XpMaU38pDjAjrT8qLQf=w108-h108-p-rp-mo-ba12-br100",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShdcxJ0jshY41NKCMugVyAs3oHI-vKphlpGb-s5lje9CB5UrTt2tb9HtCd&s=10",
     review:
-      "I was hospitalised at Parekh's for dengue and Dr. Hinesh was my doctor. He really took good care of me, even more than my family could. I would have died without him. Dr. Hinesh is technically very sound and I would highly recommend him.",
+      "I consulted Dr. Aarav Sharma for chronic shoulder pain. His diagnosis was accurate, and the physiotherapy plan worked wonderfully. I regained full shoulder movement within a few weeks.",
   },
   {
-    name: "Hinal Gohil",
+    name: "Rohit Desai",
     rating: 5,
     image:
-      "https://lh3.googleusercontent.com/a/ACg8ocLxkTUchAmLXsH_njtZD03U3JL2jTQMe67N1i_UB2-iWJkRvA=w108-h108-p-rp-mo-br100",
+      "https://i.pinimg.com/736x/52/08/ce/5208ce6c1a5852114c7984a2f0a1c74d.jpg",
     review:
-      "Dr. Hinesh Acharya is one of the most trusted diabetes doctors in Ahmedabad, renowned for his expertise in treating diabetes with individualized care. His rich experience, empathetic manner and dedication to patient welfare make him the first choice for effective diabetes treatment.",
+      "Following a football injury, I suffered an ACL tear. Dr. Aarav Sharma performed the surgery successfully and guided me throughout rehabilitation. I'm back on the field with complete confidence.",
   },
+
 ];
 
 

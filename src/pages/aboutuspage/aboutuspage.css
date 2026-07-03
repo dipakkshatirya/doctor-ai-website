@@ -1,0 +1,382 @@
+/* ==========================================================
+   About Us page — matches the existing site theme:
+   navy headings, blue (#1d6ff2) accents, soft blue-tinted
+   cards, pill-shaped CTA buttons.
+
+   Animation system:
+   - "load-in"  → runs once, automatically, when the page renders
+                  (used on the hero, since it's visible immediately).
+   - "reveal"   → starts hidden; the Reveal component (JS/IntersectionObserver)
+                  adds "is-visible" the moment the block scrolls into view,
+                  which plays the fade/slide-up transition below.
+   ========================================================== */
+
+.about-page {
+  --navy: #0f1b3d;
+  --blue: #1d6ff2;
+  --blue-light: #4fa8ff;
+  --blue-tint: #eef4ff;
+  --gray: #5b6478;
+  --border: #e5eaf5;
+
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 64px 24px 96px;
+  color: var(--navy);
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+/* ---------- Hero ---------- */
+.about-hero {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 56px;
+  align-items: center;
+  margin-bottom: 96px;
+}
+
+.about-eyebrow {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 14px;
+}
+
+.about-hero-text h1 {
+  font-size: 52px;
+  line-height: 1.08;
+  font-weight: 800;
+  color: var(--navy);
+  margin: 0 0 20px;
+}
+
+.about-hero-text h1 span {
+  background: linear-gradient(90deg, var(--blue) 0%, var(--blue-light) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.about-tagline {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--gray);
+  max-width: 480px;
+  margin: 0 0 32px;
+}
+
+.about-stats {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.about-stat-card {
+  background: var(--blue-tint);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px 22px;
+  min-width: 130px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.about-stat-number {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--navy);
+}
+
+.about-stat-label {
+  font-size: 13px;
+  color: var(--gray);
+  font-weight: 500;
+}
+
+.about-hero-images {
+  position: relative;
+}
+
+.about-hero-img-main {
+  width: 100%;
+  border-radius: 24px;
+  box-shadow: 0 30px 60px -20px rgba(29, 111, 242, 0.35);
+  display: block;
+  object-fit: cover;
+}
+
+.about-hero-img-secondary {
+  position: absolute;
+  bottom: -32px;
+  left: -32px;
+  width: 42%;
+  border-radius: 16px;
+  border: 4px solid #ffffff;
+  box-shadow: 0 20px 40px -15px rgba(15, 27, 61, 0.3);
+  object-fit: cover;
+}
+
+/* ---------- Bio ---------- */
+.about-bio {
+  max-width: 820px;
+  margin: 0 auto 96px;
+  text-align: center;
+}
+
+.about-bio h2,
+.about-specialties h2,
+.about-contact h2 {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--navy);
+  margin: 0 0 24px;
+}
+
+.about-bio p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--gray);
+  margin: 0 0 18px;
+}
+
+/* ---------- Specialties ---------- */
+.about-specialties {
+  margin-bottom: 96px;
+  text-align: center;
+}
+
+.about-specialties-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 32px;
+}
+
+.about-specialty-card {
+  display: block;
+  text-decoration: none;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 22px 18px;
+  font-weight: 700;
+  color: var(--navy);
+  font-size: 15px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.about-specialty-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--blue);
+  background: var(--blue-tint);
+  box-shadow: 0 14px 30px -12px rgba(29, 111, 242, 0.3);
+}
+
+/* ---------- Contact ---------- */
+.about-contact {
+  background: var(--navy);
+  border-radius: 28px;
+  padding: 56px 48px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.about-contact h2 {
+  color: #ffffff;
+}
+
+.about-contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  text-align: left;
+  margin: 0 auto 40px;
+  max-width: 900px;
+}
+
+.about-contact-item {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.about-contact-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue-light);
+  margin-bottom: 10px;
+}
+
+.about-contact-item p,
+.about-contact-item a {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0;
+}
+
+.about-contact-item a:hover {
+  color: var(--blue-light);
+}
+
+.about-cta-btn {
+  display: inline-block;
+  background: linear-gradient(90deg, var(--blue) 0%, var(--blue-light) 100%);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 16px 36px;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 16px 32px -10px rgba(29, 111, 242, 0.55);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.about-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px -10px rgba(29, 111, 242, 0.65);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .about-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .about-hero-images {
+    order: -1;
+  }
+
+  .about-hero-text h1 {
+    font-size: 40px;
+  }
+
+  .about-specialties-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-contact {
+    padding: 40px 24px;
+  }
+}
+
+@media (max-width: 560px) {
+  .about-page {
+    padding: 40px 18px 64px;
+  }
+
+  .about-hero-text h1 {
+    font-size: 32px;
+  }
+
+  .about-specialties-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-hero-img-secondary {
+    left: -12px;
+    bottom: -20px;
+    width: 48%;
+  }
+}
+
+/* ==========================================================
+   Animations
+   ========================================================== */
+
+/* Wrapper for each specialty card so the Reveal div doesn't
+   disturb the grid or the card's own hover styling. */
+.about-specialty-wrap {
+  display: block;
+}
+
+.about-specialty-wrap .about-specialty-card {
+  height: 100%;
+}
+
+/* ---------- Page-load animation (hero) ---------- */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.load-in {
+  opacity: 0;
+  animation: fadeSlideUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.about-hero-images.load-in {
+  animation-name: fadeScaleIn;
+}
+
+.load-in-1 { animation-delay: 0.05s; }
+.load-in-2 { animation-delay: 0.18s; }
+.load-in-3 { animation-delay: 0.32s; }
+.load-in-4 { animation-delay: 0.46s; }
+.load-in-5 { animation-delay: 0.6s; }
+
+/* ---------- Scroll-triggered reveal ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Subtle "pop" for the individual specialty cards as they stagger in */
+.about-specialty-wrap.reveal {
+  transform: translateY(24px) scale(0.97);
+}
+
+.about-specialty-wrap.reveal.is-visible {
+  transform: translateY(0) scale(1);
+}
+
+/* Respect reduced-motion preferences: skip animated motion entirely,
+   the Reveal component also short-circuits straight to is-visible */
+@media (prefers-reduced-motion: reduce) {
+  .load-in,
+  .reveal,
+  .about-specialty-wrap.reveal {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

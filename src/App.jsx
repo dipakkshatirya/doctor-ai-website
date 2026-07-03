@@ -19,18 +19,20 @@ import Floatingbtn from "./floatingBtn/Floatingbtn";
 import AboutUsPage from "./pages/aboutuspage/aboutuspage";
 import BlogPage from "./pages/blogpage/blogpage";
 import ContactUsPage from "./pages/contactuspage";
-import DiabetesManagement from "./pages/diabetesmanagement";
-import BloodPressure from "./pages/bloodpressure";
-import ChestPain from "./pages/chestpain";
-import Thyroid from "./pages/thyriod";
 
-// Home Component
+// Blog Pages
+import Jointreplace from "./pages/Jointreplace";
+import Sportsmedicine from "./pages/Sportsmedicine";
+import Handandwrist from "./pages/handandwrist";
+import FootandAnkle from "./pages/FootandAnkle";
+import Spine from "./pages/Spine";
+import TraumaAndFractures from "./pages/TraumaAndFractures";
+
 function Home() {
   return (
     <>
       <Profile />
-
-      <div className="section-divider">
+        <div className="section-divider">
         <span className="divider-line"></span>
         <span className="divider-pulse">
           <svg viewBox="0 0 90 28">
@@ -39,10 +41,8 @@ function Home() {
         </span>
         <span className="divider-line"></span>
       </div>
-
       <Aboutus />
-
-      <div className="section-divider">
+        <div className="section-divider">
         <span className="divider-line"></span>
         <span className="divider-pulse">
           <svg viewBox="0 0 90 28">
@@ -51,10 +51,8 @@ function Home() {
         </span>
         <span className="divider-line"></span>
       </div>
-
       <Services />
-
-      <div className="section-divider">
+        <div className="section-divider">
         <span className="divider-line"></span>
         <span className="divider-pulse">
           <svg viewBox="0 0 90 28">
@@ -63,10 +61,8 @@ function Home() {
         </span>
         <span className="divider-line"></span>
       </div>
-
       <Horizservices />
-
-      <div className="section-divider">
+        <div className="section-divider">
         <span className="divider-line"></span>
         <span className="divider-pulse">
           <svg viewBox="0 0 90 28">
@@ -75,10 +71,8 @@ function Home() {
         </span>
         <span className="divider-line"></span>
       </div>
-
       <Reviews />
-
-      <div className="section-divider">
+        <div className="section-divider">
         <span className="divider-line"></span>
         <span className="divider-pulse">
           <svg viewBox="0 0 90 28">
@@ -87,10 +81,8 @@ function Home() {
         </span>
         <span className="divider-line"></span>
       </div>
-
       <Contactus />
-
-      <div className="section-divider">
+        <div className="section-divider">
         <span className="divider-line"></span>
         <span className="divider-pulse">
           <svg viewBox="0 0 90 28">
@@ -99,7 +91,6 @@ function Home() {
         </span>
         <span className="divider-line"></span>
       </div>
-
       <Location />
     </>
   );
@@ -122,30 +113,41 @@ function App() {
       <Navbar />
 
       <Routes>
-        {/* Home */}
         <Route path="/" element={<Home />} />
 
-        {/* Navbar Pages */}
         <Route path="/about" element={<AboutUsPage />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/contact" element={<ContactUsPage />} />
 
-        {/* Treatment Pages */}
+        {/* Blog Detail Pages */}
         <Route
-          path="/treatments/diabetes-management"
-          element={<DiabetesManagement />}
+          path="/blog/joint-replacement"
+          element={<Jointreplace />}
         />
+
         <Route
-          path="/treatments/blood-pressure-management"
-          element={<BloodPressure />}
+          path="/blog/sports-medicine"
+          element={<Sportsmedicine />}
         />
+
         <Route
-          path="/treatments/chest-pain-management"
-          element={<ChestPain />}
+          path="/blog/hand-wrist"
+          element={<Handandwrist />}
         />
+
         <Route
-          path="/treatments/thyroid-disorders"
-          element={<Thyroid />}
+          path="/blog/foot-ankle"
+          element={<FootandAnkle />}
+        />
+
+        <Route
+          path="/blog/spine"
+          element={<Spine />}
+        />
+
+        <Route
+          path="/blog/trauma-fractures"
+          element={<TraumaAndFractures />}
         />
       </Routes>
 
