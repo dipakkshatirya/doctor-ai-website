@@ -169,12 +169,12 @@ const Aboutus = () => {
       </div>
 
       {/* Button */}
-      <div className="aboutus-button">
+      {/* <div className="aboutus-button">
         <button className="read-more-btn" onClick={() => navigate("/about")}>
           <span>Read More</span>
           <FontAwesomeIcon icon={faArrowRight} />
         </button>
-      </div>
+      </div> */}
     </section>
   );
 };

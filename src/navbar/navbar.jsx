@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import "./navbar.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -19,6 +19,32 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [treatmentOpen, setTreatmentOpen] = useState(false);
 
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  // Closes any open menus (used on every nav click)
+  const closeMenus = () => {
+    setMenuOpen(false);
+    setTreatmentOpen(false);
+  };
+
+  // Scrolls to a section on the home page.
+  // If we're not on "/", navigate there first, then let Home's
+  // hash-scroll effect (in App.jsx) handle scrolling once mounted.
+  const scrollToSection = (id) => (e) => {
+    e.preventDefault();
+    closeMenus();
+
+    if (location.pathname === "/") {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    } else {
+      navigate(`/#${id}`);
+    }
+  };
+
   return (
     <nav className="navbar">
       {/* Logo */}
@@ -34,11 +60,15 @@ const Navbar = () => {
       {/* Desktop Navigation */}
       <ul className="nav-links">
         <li>
-          <NavLink to="/">Home</NavLink>
+          <NavLink to="/" onClick={closeMenus}>
+            Home
+          </NavLink>
         </li>
 
         <li>
-          <NavLink to="/about">About Us</NavLink>
+          <a href="#about" onClick={scrollToSection("about")}>
+            About Us
+          </a>
         </li>
 
         {/* Desktop Specialties Dropdown */}
@@ -48,44 +78,48 @@ const Navbar = () => {
           </span>
 
           <div className="dropdown-menu">
-            <NavLink to="/blog/joint-replacement">
+            <a href="#services" onClick={scrollToSection("services")}>
               <FontAwesomeIcon icon={faBone} />
               Joint Replacement
-            </NavLink>
+            </a>
 
-            <NavLink to="/blog/sports-medicine">
+            <a href="#services" onClick={scrollToSection("services")}>
               <FontAwesomeIcon icon={faPersonRunning} />
               Sports Medicine
-            </NavLink>
+            </a>
 
-            <NavLink to="/blog/hand-wrist">
+            <a href="#services" onClick={scrollToSection("services")}>
               <FontAwesomeIcon icon={faHand} />
               Hand & Wrist
-            </NavLink>
+            </a>
 
-            <NavLink to="/blog/foot-ankle">
+            <a href="#services" onClick={scrollToSection("services")}>
               <FontAwesomeIcon icon={faShoePrints} />
               Foot & Ankle
-            </NavLink>
+            </a>
 
-            <NavLink to="/blog/spine">
+            <a href="#services" onClick={scrollToSection("services")}>
               <FontAwesomeIcon icon={faNotesMedical} />
               Spine
-            </NavLink>
+            </a>
 
-            <NavLink to="/blog/trauma-fractures">
+            <a href="#services" onClick={scrollToSection("services")}>
               <FontAwesomeIcon icon={faTruckMedical} />
               Trauma & Fractures
-            </NavLink>
+            </a>
           </div>
         </li>
 
         <li>
-          <NavLink to="/blog">Blog</NavLink>
+          <NavLink to="/blog" onClick={closeMenus}>
+            Blog
+          </NavLink>
         </li>
 
         <li>
-          <NavLink to="/contact">Contact Us</NavLink>
+          <a href="#contact" onClick={scrollToSection("contact")}>
+            Contact Us
+          </a>
         </li>
       </ul>
 
@@ -116,25 +150,13 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       <div className={`mobile-nav ${menuOpen ? "active" : ""}`}>
-        <NavLink
-          to="/"
-          onClick={() => {
-            setMenuOpen(false);
-            setTreatmentOpen(false);
-          }}
-        >
+        <NavLink to="/" onClick={closeMenus}>
           Home
         </NavLink>
 
-        <NavLink
-          to="/about"
-          onClick={() => {
-            setMenuOpen(false);
-            setTreatmentOpen(false);
-          }}
-        >
+        <a href="#about" onClick={scrollToSection("about")}>
           About Us
-        </NavLink>
+        </a>
 
         {/* Mobile Specialties */}
         <div className="mobile-dropdown">
@@ -155,93 +177,45 @@ const Navbar = () => {
               treatmentOpen ? "active" : ""
             }`}
           >
-            <NavLink
-              to="/blog/joint-replacement"
-              onClick={() => {
-                setMenuOpen(false);
-                setTreatmentOpen(false);
-              }}
-            >
+            <a href="#services" onClick={scrollToSection("services")}>
               <FontAwesomeIcon icon={faBone} />
               Joint Replacement
-            </NavLink>
+            </a>
 
-            <NavLink
-              to="/blog/sports-medicine"
-              onClick={() => {
-                setMenuOpen(false);
-                setTreatmentOpen(false);
-              }}
-            >
+            <a href="#services" onClick={scrollToSection("services")}>
               <FontAwesomeIcon icon={faPersonRunning} />
               Sports Medicine
-            </NavLink>
+            </a>
 
-            <NavLink
-              to="/blog/hand-wrist"
-              onClick={() => {
-                setMenuOpen(false);
-                setTreatmentOpen(false);
-              }}
-            >
+            <a href="#services" onClick={scrollToSection("services")}>
               <FontAwesomeIcon icon={faHand} />
               Hand & Wrist
-            </NavLink>
+            </a>
 
-            <NavLink
-              to="/blog/foot-ankle"
-              onClick={() => {
-                setMenuOpen(false);
-                setTreatmentOpen(false);
-              }}
-            >
+            <a href="#services" onClick={scrollToSection("services")}>
               <FontAwesomeIcon icon={faShoePrints} />
               Foot & Ankle
-            </NavLink>
+            </a>
 
-            <NavLink
-              to="/blog/spine"
-              onClick={() => {
-                setMenuOpen(false);
-                setTreatmentOpen(false);
-              }}
-            >
+            <a href="#services" onClick={scrollToSection("services")}>
               <FontAwesomeIcon icon={faNotesMedical} />
               Spine
-            </NavLink>
+            </a>
 
-            <NavLink
-              to="/blog/trauma-fractures"
-              onClick={() => {
-                setMenuOpen(false);
-                setTreatmentOpen(false);
-              }}
-            >
+            <a href="#services" onClick={scrollToSection("services")}>
               <FontAwesomeIcon icon={faTruckMedical} />
               Trauma & Fractures
-            </NavLink>
+            </a>
           </div>
         </div>
 
-        <NavLink
-          to="/blog"
-          onClick={() => {
-            setMenuOpen(false);
-            setTreatmentOpen(false);
-          }}
-        >
+        <NavLink to="/blog" onClick={closeMenus}>
           Blog
         </NavLink>
 
-        <NavLink
-          to="/contact"
-          onClick={() => {
-            setMenuOpen(false);
-            setTreatmentOpen(false);
-          }}
-        >
+        <a href="#contact" onClick={scrollToSection("contact")}>
           Contact Us
-        </NavLink>
+        </a>
 
         <a
           href="https://wa.me/919265139142?text=Hello%20Dr.%20Aarav%20Sharma,%20I%20would%20like%20to%20book%20an%20appointment.%20Please%20let%20me%20know%20the%20available%20time%20slots.%20Thank%20you."

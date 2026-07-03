@@ -15,10 +15,10 @@ const Header = () => {
         <p>
           <span className="full-text">
             <strong>Call Us:</strong>{" "}
-            <a href="tel:+919879495597">+91 92651 39142</a>
+            <a href="tel:+91 9265139142">+91 92651 39142</a>
             
           </span>
-          <a href="tel:+919879495597" className="short-text">Call</a>
+          <a href="tel:+91 9265139142" className="short-text">Call</a>
         </p>
       </div>
 

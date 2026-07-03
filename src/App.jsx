@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -28,69 +28,80 @@ import FootandAnkle from "./pages/FootandAnkle";
 import Spine from "./pages/Spine";
 import TraumaAndFractures from "./pages/TraumaAndFractures";
 
+function SectionDivider() {
+  return (
+    <div className="section-divider">
+      <span className="divider-line"></span>
+
+      <span className="divider-pulse">
+        <svg viewBox="0 0 90 28">
+          <path d="M0 14 H25 L32 4 L40 24 L48 8 L54 14 H90" />
+        </svg>
+      </span>
+
+      <span className="divider-line"></span>
+    </div>
+  );
+}
+
 function Home() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace("#", "");
+      const element = document.getElementById(id);
+
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }, 100);
+      }
+    } else {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+  }, [location]);
+
   return (
     <>
-      <Profile />
-        <div className="section-divider">
-        <span className="divider-line"></span>
-        <span className="divider-pulse">
-          <svg viewBox="0 0 90 28">
-            <path d="M0 14 H25 L32 4 L40 24 L48 8 L54 14 H90" />
-          </svg>
-        </span>
-        <span className="divider-line"></span>
-      </div>
-      <Aboutus />
-        <div className="section-divider">
-        <span className="divider-line"></span>
-        <span className="divider-pulse">
-          <svg viewBox="0 0 90 28">
-            <path d="M0 14 H25 L32 4 L40 24 L48 8 L54 14 H90" />
-          </svg>
-        </span>
-        <span className="divider-line"></span>
-      </div>
-      <Services />
-        <div className="section-divider">
-        <span className="divider-line"></span>
-        <span className="divider-pulse">
-          <svg viewBox="0 0 90 28">
-            <path d="M0 14 H25 L32 4 L40 24 L48 8 L54 14 H90" />
-          </svg>
-        </span>
-        <span className="divider-line"></span>
-      </div>
+      <section id="home">
+        <Profile />
+      </section>
+
+      <SectionDivider />
+
+      <section id="about">
+        <Aboutus />
+      </section>
+
+      <SectionDivider />
+
+      <section id="services">
+        <Services />
+      </section>
+
+      <SectionDivider />
+
       <Horizservices />
-        <div className="section-divider">
-        <span className="divider-line"></span>
-        <span className="divider-pulse">
-          <svg viewBox="0 0 90 28">
-            <path d="M0 14 H25 L32 4 L40 24 L48 8 L54 14 H90" />
-          </svg>
-        </span>
-        <span className="divider-line"></span>
-      </div>
+
+      <SectionDivider />
+
       <Reviews />
-        <div className="section-divider">
-        <span className="divider-line"></span>
-        <span className="divider-pulse">
-          <svg viewBox="0 0 90 28">
-            <path d="M0 14 H25 L32 4 L40 24 L48 8 L54 14 H90" />
-          </svg>
-        </span>
-        <span className="divider-line"></span>
-      </div>
-      <Contactus />
-        <div className="section-divider">
-        <span className="divider-line"></span>
-        <span className="divider-pulse">
-          <svg viewBox="0 0 90 28">
-            <path d="M0 14 H25 L32 4 L40 24 L48 8 L54 14 H90" />
-          </svg>
-        </span>
-        <span className="divider-line"></span>
-      </div>
+
+      <SectionDivider />
+
+      <section id="contact">
+        <Contactus />
+      </section>
+
+      <SectionDivider />
+
       <Location />
     </>
   );
@@ -113,8 +124,10 @@ function App() {
       <Navbar />
 
       <Routes>
+        {/* Home */}
         <Route path="/" element={<Home />} />
 
+        {/* Standalone Pages */}
         <Route path="/about" element={<AboutUsPage />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/contact" element={<ContactUsPage />} />

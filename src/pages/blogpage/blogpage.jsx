@@ -159,16 +159,12 @@ const Blogpage = () => {
     <div className="blog-page">
       {/* Header */}
       <div className="blog-header">
-        <span className="blog-eyebrow load-in load-in-1">
-          Orthopedic Insights
-        </span>
+      
         <h1 className="load-in load-in-2">
-          From the <span>Blog</span>
+          From the Blog
+          
         </h1>
-        <p className="blog-subtitle load-in load-in-3">
-          Practical, doctor-written guidance on the conditions Dr. Aarav
-          Sharma treats most often — from joint replacement to trauma care.
-        </p>
+        <span className="services-underline"></span>
       </div>
 
       {/* Post grid */}
@@ -212,7 +208,12 @@ const Blogpage = () => {
       <Reveal className="blog-cta">
         <h2>Not sure which specialty you need?</h2>
         <p>Book a consultation and Dr. Sharma will guide you to the right treatment plan.</p>
-        <a href="/contact" className="blog-cta-btn">
+          <a
+          href="https://wa.me/919265139142?text=Hello%20Dr.%20Aarav%20Sharma,%20I%20would%20like%20to%20book%20an%20appointment.%20Please%20let%20me%20know%20the%20available%20time%20slots.%20Thank%20you."
+          target="_blank"
+          rel="noopener noreferrer"
+          className="blog-cta-btn"
+        >
           Book Appointment
         </a>
       </Reveal>
