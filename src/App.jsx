@@ -27,6 +27,7 @@ import Handandwrist from "./pages/handandwrist";
 import FootandAnkle from "./pages/FootandAnkle";
 import Spine from "./pages/Spine";
 import TraumaAndFractures from "./pages/TraumaAndFractures";
+import Chatbot from "./chatbot/chatbot";
 
 function SectionDivider() {
   return (
@@ -166,6 +167,8 @@ function App() {
 
       <Footer />
       <Floatingbtn />
+      <Chatbot />
+      {/* <Chatbot */}
     </>
   );
 }

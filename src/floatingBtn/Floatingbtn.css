@@ -1,12 +1,21 @@
 /* ===========================
    Floating Buttons
+   Both phone + WhatsApp now stack vertically on the LEFT edge.
+   --fab-size / --fab-edge / --fab-gap are set once per breakpoint on
+   .floating-btn, and every position below is derived from them with
+   calc() — so the vertical gap always scales correctly with the
+   button size, no per-breakpoint math needed.
 =========================== */
 
 .floating-btn {
+  --fab-size: 52px;
+  --fab-edge: 28px; /* distance from the left/bottom edge of the screen */
+  --fab-gap: 22px; /* vertical gap between the two stacked buttons */
+
   position: fixed;
-  bottom: 28px;
-  width: 52px;
-  height: 52px;
+  left: var(--fab-edge);
+  width: var(--fab-size);
+  height: var(--fab-size);
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -20,33 +29,32 @@
   transform: translateY(70px);
   animation: floatEntrance 0.8s ease forwards;
   transition: transform 0.35s ease, box-shadow 0.35s ease;
-  /* width: 100%; */
 }
 
 /* ===========================
-   Phone Button
+   Phone Button — sits at the bottom of the stack
 =========================== */
 
 .phone-btn {
-  left: 28px;
+  bottom: var(--fab-edge);
   background: linear-gradient(135deg, #2563eb, #3b82f6);
   animation-delay: 0.2s;
   box-shadow: 0 12px 30px rgba(37, 99, 235, 0.35);
 }
 
 /* ===========================
-   WhatsApp Button
+   WhatsApp Button — sits directly above the phone button
 =========================== */
 
 .whatsapp-btn {
-  right: 28px;
+  bottom: calc(var(--fab-edge) + var(--fab-size) + var(--fab-gap));
   background: #25d366;
   animation-delay: 0.45s;
   box-shadow: 0 12px 30px rgba(37, 211, 102, 0.35);
 }
 
 /* ===========================
-   Hover Effects
+   Hover Effects (unchanged — same shrink/expand feel)
 =========================== */
 
 .floating-btn:hover {
@@ -155,147 +163,85 @@
 
 /* ===========================
    Responsive
+   Each breakpoint only needs to set the three variables — every
+   position (edge distance, stacking gap) recalculates automatically.
 =========================== */
 
 /* Large Desktop */
 @media (min-width: 1600px) {
   .floating-btn {
-    width: 70px;
-    height: 70px;
+    --fab-size: 70px;
+    --fab-edge: 40px;
+    --fab-gap: 28px;
     font-size: 28px;
-    bottom: 40px;
-  }
-
-  .phone-btn {
-    left: 40px;
-  }
-
-  .whatsapp-btn {
-    right: 40px;
   }
 }
 
 /* Desktop */
 @media (max-width: 1400px) {
   .floating-btn {
-    width: 64px;
-    height: 64px;
-    bottom: 32px;
-  }
-
-  .phone-btn {
-    left: 32px;
-  }
-
-  .whatsapp-btn {
-    right: 32px;
+    --fab-size: 64px;
+    --fab-edge: 32px;
+    --fab-gap: 24px;
   }
 }
 
 /* Laptop */
 @media (max-width: 1200px) {
   .floating-btn {
-    width: 60px;
-    height: 60px;
+    --fab-size: 60px;
+    --fab-edge: 26px;
+    --fab-gap: 22px;
     font-size: 23px;
-    bottom: 28px;
-  }
-
-  .phone-btn {
-    left: 26px;
-  }
-
-  .whatsapp-btn {
-    right: 26px;
   }
 }
 
 /* Tablet */
 @media (max-width: 992px) {
   .floating-btn {
-    width: 58px;
-    height: 58px;
+    --fab-size: 58px;
+    --fab-edge: 22px;
+    --fab-gap: 14px;
     font-size: 22px;
-    bottom: 24px;
-  }
-
-  .phone-btn {
-    left: 22px;
-  }
-
-  .whatsapp-btn {
-    right: 22px;
   }
 }
 
 /* Tablet Portrait */
 @media (max-width: 768px) {
   .floating-btn {
-    width: 54px;
-    height: 54px;
+    --fab-size: 54px;
+    --fab-edge: 18px;
+    --fab-gap: 12px;
     font-size: 21px;
-    bottom: 22px;
-  }
-
-  .phone-btn {
-    left: 18px;
-  }
-
-  .whatsapp-btn {
-    right: 18px;
   }
 }
 
 /* Large Mobile */
 @media (max-width: 576px) {
   .floating-btn {
-    width: 52px;
-    height: 52px;
+    --fab-size: 52px;
+    --fab-edge: 16px;
+    --fab-gap: 12px;
     font-size: 20px;
-    bottom: 18px;
-  }
-
-  .phone-btn {
-    left: 16px;
-  }
-
-  .whatsapp-btn {
-    right: 16px;
   }
 }
 
 /* Mobile */
 @media (max-width: 480px) {
   .floating-btn {
-    width: 50px;
-    height: 50px;
+    --fab-size: 50px;
+    --fab-edge: 14px;
+    --fab-gap: 10px;
     font-size: 19px;
-    bottom: 16px;
-  }
-
-  .phone-btn {
-    left: 14px;
-  }
-
-  .whatsapp-btn {
-    right: 14px;
   }
 }
 
 /* Small Phones */
 @media (max-width: 360px) {
   .floating-btn {
-    width: 46px;
-    height: 46px;
+    --fab-size: 46px;
+    --fab-edge: 12px;
+    --fab-gap: 10px;
     font-size: 18px;
-    bottom: 14px;
-  }
-
-  .phone-btn {
-    left: 12px;
-  }
-
-  .whatsapp-btn {
-    right: 12px;
   }
 }
