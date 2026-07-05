@@ -510,7 +510,32 @@
 /* ==============================================================
    Responsive breakpoints (mobile-first, all screen sizes)
    ============================================================== */
+.ar-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
 
+.ar-clear-btn {
+  background: rgba(255, 255, 255, 0.16);
+  border: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.ar-clear-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.08);
+}
 /* Extra-small phones, e.g. <= 359px (older/small Android) */
 @media (max-width: 359px) {
   .ar-widget {

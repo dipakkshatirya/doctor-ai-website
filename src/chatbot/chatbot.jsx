@@ -72,6 +72,20 @@ function SendIcon() {
   );
 }
 
+function ClearIcon() {
+  return (
+    <svg width="15" height="15" viewBox="0 0 16 16" fill="none">
+      <path
+        d="M2 4h12M5.5 4V2.5A1 1 0 0 1 6.5 1.5h3a1 1 0 0 1 1 1V4M6.5 7.5v4M9.5 7.5v4M3.5 4l.5 8.5A1 1 0 0 0 5 13.5h6a1 1 0 0 0 1-1L12.5 4"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 const WELCOME = {
   id: "welcome",
   role: "bot",
@@ -80,12 +94,12 @@ const WELCOME = {
 
 // Shown only before the visitor's first message — tap one to send it straight away.
 const QUICK_REPLIES = [
+  { label: "Clinic Timings", text: "What time is the clinic open?" },
+  { label: "About Dr. Sharma", text: "Tell me about Dr. Aarav Sharma" },
   {
-    label: "Joint Replacement",
-    text: "What should I know about joint replacement surgery?",
+    label: "Patient Reviews",
+    text: "What do patients say about Dr. Aarav Sharma?",
   },
-  { label: "Sports Medicine", text: "What sports injuries do you treat?" },
-  { label: "Spine Care", text: "What spine conditions do you treat?" },
 ];
 
 // ---- Turns plain-text / markdown-lite bot replies into real structure ----
@@ -317,6 +331,14 @@ export default function Chatbot() {
     if (e.key === "Enter") sendMessage();
   };
 
+  const clearChat = () => {
+    setMessages([WELCOME]);
+    setMessage("");
+    setLoading(false);
+    setElapsedSeconds(0);
+    setStreamingId(null);
+  };
+
   return (
     <div className="ar-widget">
       {open && (
@@ -335,13 +357,23 @@ export default function Chatbot() {
                 </span>
               </div>
             </div>
-            <button
-              className="ar-close-btn"
-              onClick={() => setOpen(false)}
-              aria-label="Close chat"
-            >
-              <CloseIcon />
-            </button>
+            <div className="ar-header-actions">
+              <button
+                className="ar-clear-btn"
+                onClick={clearChat}
+                aria-label="Clear chat"
+                title="Clear chat"
+              >
+                <ClearIcon />
+              </button>
+              <button
+                className="ar-close-btn"
+                onClick={() => setOpen(false)}
+                aria-label="Close chat"
+              >
+                <CloseIcon />
+              </button>
+            </div>
           </div>
 
           <div className="ar-messages" ref={scrollRef}>
