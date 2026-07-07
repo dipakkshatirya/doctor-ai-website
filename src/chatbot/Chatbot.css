@@ -183,6 +183,8 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  /* nudge logo slightly toward the left edge of the header */
+  margin-left: -6px;
 }
 
 .ar-avatar-pulse {
@@ -507,9 +509,7 @@
   cursor: not-allowed;
 }
 
-/* ==============================================================
-   Responsive breakpoints (mobile-first, all screen sizes)
-   ============================================================== */
+/* ---------- Header actions (clear/close group) ---------- */
 .ar-header-actions {
   display: flex;
   align-items: center;
@@ -536,53 +536,89 @@
   background: rgba(255, 255, 255, 0.3);
   transform: scale(1.08);
 }
-/* Extra-small phones, e.g. <= 359px (older/small Android) */
+
+/* ==============================================================
+   Responsive breakpoints (mobile-first, all screen sizes)
+
+   Mobile panel heights are now capped at a shorter, fixed max
+   (rather than filling almost the entire viewport) so the widget
+   feels like a compact chat card instead of a full-screen sheet.
+   ============================================================== */
+
+/* Extra-small phones, <= 359px (older/small Android) */
 @media (max-width: 359px) {
   .ar-widget {
     right: 8px;
     bottom: 10px;
   }
   .ar-fab {
-    width: 50px;
-    height: 50px;
+    width: 48px;
+    height: 48px;
   }
   .ar-panel {
     width: calc(100vw - 16px);
-    height: calc(100vh - 90px);
-    max-height: none;
+    height: min(60vh, 420px);
+    max-height: calc(100vh - 90px);
     border-radius: 16px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
+  }
+  .ar-avatar {
+    width: 32px;
+    height: 32px;
+    margin-left: -4px;
   }
   .ar-chat-bubble {
-    font-size: 11.5px;
-    padding: 8px 12px;
+    font-size: 11px;
+    padding: 7px 11px;
   }
   .ar-title {
-    font-size: 14px;
+    font-size: 13.5px;
+  }
+  .ar-header {
+    padding: 12px 10px 12px 12px;
   }
 }
 
 /* Small phones, 360px - 420px */
 @media (min-width: 360px) and (max-width: 420px) {
   .ar-widget {
-    right: 12px;
-    bottom: 16px;
+    right: 10px;
+    bottom: 14px;
+  }
+  .ar-fab {
+    width: 52px;
+    height: 52px;
   }
   .ar-panel {
-    width: calc(100vw - 24px);
-    max-height: calc(100vh - 130px);
+    width: calc(100vw - 20px);
+    height: min(62vh, 440px);
+    max-height: calc(100vh - 110px);
+    border-radius: 18px;
+    margin-bottom: 10px;
+  }
+  .ar-avatar {
+    width: 34px;
+    height: 34px;
+    margin-left: -5px;
+  }
+  .ar-header {
+    padding: 13px 12px 13px 13px;
   }
 }
 
 /* Large phones / small tablets (portrait), 421px - 640px */
 @media (min-width: 421px) and (max-width: 640px) {
   .ar-widget {
-    right: 16px;
-    bottom: 18px;
+    right: 14px;
+    bottom: 16px;
   }
   .ar-panel {
     width: min(380px, calc(100vw - 28px));
-    max-height: calc(100vh - 140px);
+    height: min(64vh, 460px);
+    max-height: calc(100vh - 120px);
+  }
+  .ar-avatar {
+    margin-left: -5px;
   }
 }
 
@@ -590,7 +626,7 @@
 @media (min-width: 641px) and (max-width: 900px) {
   .ar-panel {
     width: 380px;
-    height: 520px;
+    height: 500px;
   }
 }
 
